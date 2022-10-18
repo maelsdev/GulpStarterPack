@@ -1,4 +1,121 @@
 .catalog {
+  &__wrapper{
+    display: flex;
+  }
+  &__list{
+    
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 400px;
+    padding: 0 10px;
+    gap:10px;
+    &-item{
+      position: relative;
+      border: 1px solid #EFF1F1;
+      padding: 20px;
+      .like{
+        width: 20px;
+        height: 15px;
+        position: absolute;
+        right: 18px;
+      }
+      img{
+        display: block;
+        width: 180px;
+        height: 210px;
+        object-fit: fill;
+        margin: 0 auto;
+        
+      }
+    }
+    
+    .top{
+      font-family: 'Stolzl';
+font-style: normal;
+font-weight: 400;
+font-size: 10px;
+color: #00382F;
+width: 38px;
+height: 23px;
+background: #B4FFF0;
+border-radius: 4px;
+text-align: center;
+padding-top: 4px;
+
+    }
+    .title{
+      font-family: 'Stolzl';
+font-style: normal;
+font-weight: 500;
+font-size: 10px;
+color: #5C5F60;
+margin-top: 20px;
+    }
+    .sub{
+      font-family: 'Stolzl';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+color: #2D3132;
+margin-top: 4px;
+    }
+    .old{
+      font-family: 'Stolzl';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+text-decoration-line: line-through;
+color: #747778;
+    }
+    .new{
+      font-family: 'Stolzl';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+color: #2D3132;
+    }
+    .city{
+      font-family: 'Stolzl';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+color: #2D3132;
+display: flex;
+justify-content: end;
+position: relative;
+img{
+  position: absolute;
+  left: 8px;
+    top: 3px;
+  width: 8px;
+  height: 10px;
+}
+    }
+    .brand{
+      position: relative;
+      font-family: 'Stolzl';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+color: #2D3132;
+img{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: -26px;
+  top: -1px;
+}
+    }
+    
+    .descr{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+    
+
+  }
   &__navigator {
     display: flex;
     margin-top: 33px;
@@ -11,8 +128,8 @@
       color: #2d3132;
       margin-right: 8px;
       margin-left: 5px;
-      a{
-        color:#2d3132;
+      a {
+        color: #2d3132;
         text-decoration: none;
       }
     }
@@ -23,8 +140,8 @@
       font-size: 12px;
       line-height: 150%;
       color: #747778;
-      a{
-        color:#747778;
+      a {
+        color: #747778;
         text-decoration: none;
       }
     }
@@ -34,8 +151,152 @@
       font-weight: 700;
       font-size: 10px;
       line-height: 150%;
-      color: #a9acac;
       margin-right: 8px;
+    }
+  }
+
+  .catalog__title {
+    margin-top: 40px;
+    font-family: "Stolzl";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    color: #2d3132;
+  }
+  .catalog__sub {
+    margin-top: 32px;
+    font-family: "Stolzl";
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+    color: #5c5f60;
+    margin-bottom: 25px;
+  }
+
+  &__item {
+    margin-top: 2px;
+    width: 280px;
+    &-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 53px;
+      background-color: #eff1f1;
+      .title {
+        margin-left: 10px;
+        font-family: "Stolzl";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        color: #444748;
+      }
+      .arrows {
+        position: relative;
+        width: 53px;
+        height: 53px;
+        .left {
+          position: absolute;
+          width: 10px;
+          height: 2px;
+          background-color: #000;
+          right: 22px;
+          top: 24px;
+          transform: rotate(45deg);
+          transition: 0.5s all;
+          border-radius: 100%;
+        }
+        .right {
+          position: absolute;
+          width: 10px;
+          height: 2px;
+          color: #000;
+          background-color: #000;
+          right: 16px;
+          top: 24px;
+          transform: rotate(-45deg);
+          transition: 0.5s all;
+          border-radius: 100%;
+        }
+      }
+      .arrows__active {
+        .left {
+          transition: 0.5s all;
+          transform: rotate(-45deg);
+        }
+        .right {
+          transition: 0.5s all;
+          transform: rotate(45deg);
+        }
+      }
+    }
+    &-options {
+      width: 100%;
+      min-height: 53px;
+      background-color: #fff;
+      display: none;
+      transition: 0.5s all;
+      border: 1px solid #eff1f1;
+      margin-bottom: 2px;
+      #sex {
+        display: flex;
+        margin-left: 10px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+        .title {
+          margin-left: 18px;
+          width: 232px;
+          font-family: "Stolzl";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          color: #444748;
+        }
+        .count {
+          text-align: right;
+          font-family: "Stolzl";
+          font-style: normal;
+          font-weight: 200;
+          font-size: 14px;
+          color: #747778;
+        }
+      }
+      .range {
+        width: 100%;
+        margin-top: 24px;
+      }
+      .prices {
+        margin-top: 24px;
+        display: flex;
+        position: relative;
+        input {
+          width: 90%;
+          border: none;
+          border-bottom: 1px solid #bbbdbd;
+          margin-left: 5px;
+          margin-bottom: 24px;
+          font-family: "Stolzl";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          color: #2d3132;
+          text-align: center;
+        }
+        label {
+          font-family: "Stolzl";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 10px;
+          color: #747778;
+          position: absolute;
+          display: block;
+          top: -15px;
+          margin-left: 10px;
+        }
+      }
+    }
+    .catalog__item-options.active {
+      display: block;
     }
   }
 }

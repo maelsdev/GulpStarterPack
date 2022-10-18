@@ -33,6 +33,21 @@ close.addEventListener("click", () => {
   hamburger.style.display = 'block'
 });
 
+const catalogItem = document.querySelectorAll('.catalog__item-head')
+
+catalogItem.forEach(item=>{
+  item.addEventListener('click',()=>{
+    item.querySelector('.arrows').classList.toggle('arrows__active')
+    item.parentNode.querySelector('.catalog__item-options').classList.toggle('active')
+  })
+})
+const vid = document.getElementById('vid')
+const range = document.querySelector('.range')
+range.addEventListener('input',(e)=>{
+  vid.value = e.target.value;
+})
+
+
 
 
 
